@@ -1,11 +1,11 @@
 let valueBuy, freight;
 
-ValueBuy = 170;
+valueBuy = 120;
 freight = 20;
 
-if(ValueBuy > 150) {
-    console.log("Você recebeu frete grátis na sua compra de:", freight)
+if(valueBuy > 150) {
+    console.log("Você ganhou frete grátis")
 }
 else {
-    console.log("Você não recebeu frete grátis")
+    console.log("O valor foi cobrado sem frete grátis")
 }
