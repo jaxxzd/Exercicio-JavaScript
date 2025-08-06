@@ -1,1 +1,1 @@
-# exercicio-variaveis-javascript
+# exercicio-javascript
