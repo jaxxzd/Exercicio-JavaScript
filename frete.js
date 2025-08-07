@@ -3,7 +3,7 @@ let valueBuy, freight;
 valueBuy = 120;
 freight = 20;
 
-if(valueBuy > 150) {
+if(valueBuy >= 150) {
     console.log("Você ganhou frete grátis")
 }
 else {
