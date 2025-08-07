@@ -6,5 +6,5 @@ base = 4;
 const area = altura * base;
 
 console.log("O calculo de base e altura do retangulo é:", area,);
-console.log("A altura do rentagulo é:", altura)
-console.log("A base do retangulo é:", base)
+console.log("A altura do rentagulo é:", altura);
+console.log("A base do retangulo é:", base);
