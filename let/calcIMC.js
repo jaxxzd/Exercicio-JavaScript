@@ -3,7 +3,7 @@ let weight, height;
 weight = 100;
 heightSquared = 1.80**2;
 
-const IMC = weight/heightSquared;
+let IMC = weight/heightSquared;
 
 if(IMC >= 30) {
     console.log("Você está com o IMC de:", IMC, "e está classificado como obeso")
