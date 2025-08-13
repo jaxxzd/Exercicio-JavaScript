@@ -1,1 +1,1 @@
-# exercicio JavaScript
+# exercicio JavaScript da PD CASE Informática LTDA
