@@ -7,6 +7,6 @@ ValueLiter = 5.79;
 let literNecessary = tripKm/literKm;
 let literCost = literNecessary * ValueLiter;
 
-console.log("Serão necessários: ", literNecessary, "litros")
-console.log("o Custo do litro é: ", literCost, "reais")
+console.log("Serão necessários: ", literNecessary, "litros");
+console.log("o Custo do litro é: ", literCost, "reais");
 

@@ -7,4 +7,4 @@ const fator = 9 / 5;
 
 let formulaResolved = (celsius * fator) + number;
 
-console.log("A conversão de temperatura em celsius é:", formulaResolved.toFixed(0))
+console.log("A conversão de temperatura em celsius é:", formulaResolved.toFixed(0));
