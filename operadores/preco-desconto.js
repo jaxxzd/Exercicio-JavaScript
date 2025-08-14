@@ -11,7 +11,7 @@ let totalPurchasePrice = quantityPurchased * pricePerUnit;
 if(discount > 0.5){
     console.log("O desconto é maior que 50%");
 }
-else if(discount == 0.5){
+else if(discount === 0.5){
     console.log("O desconto é de 50%");
 }
 else {

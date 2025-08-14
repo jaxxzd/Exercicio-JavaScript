@@ -20,7 +20,7 @@ console.log("O resultado dessa divisão é:", resultDivision);
 let resultRest = n1 % n2;
 console.log("O resultado desse resto é:", resultRest);
 
-if(n1 == n2){
+if(n1 === n2){
     console.log(n1, "É igual a", n2);
 }
 else{   
