@@ -2,8 +2,8 @@ const prompt = require('prompt-sync')();
 
 let age, studentCard;
 
-age = 12
-studentCard = true; 
+age = Number(prompt("Digite a sua idade: "));
+studentCard = prompt("Possui carteirinha de estudante? (sim/não): ").toLowerCase() === 'sim';
 
 if(age < 12 || age > 60) {
     console.log("Ganhou entrada gratuita");
