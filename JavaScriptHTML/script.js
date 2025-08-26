@@ -23,6 +23,9 @@ function verifyGlacier() {
     if(quantityIceCream > 0 && quantityIceCream !== NaN) {
         result = `Olá, ${name}, você comprou ${quantityIceCream} sorvetes, o valor a pagar é ${"R$ " + valueTotal.toFixed(2)}`;
     }
+    else if (quantityIceCream === "") {
+        
+    }
     else if(quantityIceCream === NaN) {
         result = `Digite uma quantidade válida`
         document.getElementById("result").style.color = "red";
