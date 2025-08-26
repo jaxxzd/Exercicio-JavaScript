@@ -6,9 +6,6 @@ function Verification() {
     idade = document.getElementById("age").value;
     result = "";
 
-    idade = parseInt(idade)
-    console.log(typeof(idade))
-
     // nome
 
     if (nome === "") {
