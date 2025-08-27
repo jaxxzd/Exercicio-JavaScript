@@ -21,7 +21,7 @@ function verifyGlacier() {
     // quantidade de sorvetes
 
     if(quantityIceCream > 0 && quantityIceCream !== NaN) {
-        result = `Olá, ${name}, você comprou ${quantityIceCream} sorvetes, o valor a pagar é ${"R$ " + valueTotal.toFixed(2)}`;
+        result = `Olá, ${name}, você comprou ${quantityIceCream} sorvetes, o valor debitado é ${"R$ " + valueTotal.toFixed(2)}`;
     }
     else if (quantityIceCream === "") {
         
