@@ -31,7 +31,9 @@ function verifyGlacier() {
         showResult(`Olá, ${name}, você comprou ${quantityIceCream} sorvete, o valor debitado é ${"R$ " + valueTotal.
         toFixed(2)}`, "green");
     }
-    else if (quantityIceCream <= 0 || isNaN(quantityIceCream))
+    else if (quantityIceCream <= 0 || isNaN(quantityIceCream)) {
+        showResult("Digite uma quantidade válida", "red")
+    }
     else {
         showResult("Digite uma quantidade válida", "red")
     }
