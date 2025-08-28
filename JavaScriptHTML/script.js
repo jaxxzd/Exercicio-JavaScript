@@ -1,5 +1,5 @@
 function verifyGlacier() {
-    let name, quantityIceCream, valueTotal, result, error;
+    let name, quantityIceCream, valueTotal, error;
 
     name = document.getElementById("input-name-glacier").value.trim();
     quantityIceCream = (document.getElementById("input-quantity-ice-cream-glacier").value.trim());
