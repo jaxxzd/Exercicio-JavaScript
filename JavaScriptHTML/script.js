@@ -1,16 +1,23 @@
-let timeClearing = null;
-
 function verifyGlacier() {
-    let name, quantityIceCream, valueTotal, result;
+    let name, quantityIceCream, valueTotal, result, error;
 
     name = document.getElementById("input-name-glacier").value.trim();
-    quantityIceCream = Number(document.getElementById("input-quantity-ice-cream-glacier").value.trim());
+    quantityIceCream = (document.getElementById("input-quantity-ice-cream-glacier").value.trim());
+    error = {};
+
+    // verificação de ambos inputs vazios
+
+    if (!name && quantityIceCream.trim() === "") {
+        return
+    };
+
+    quantityIceCream = Number(quantityIceCream);
+
+    const caseSensitive = quantityIceCream === 1 ? "sorvete" : "sorvetes";
 
     const valueIceCream = 8;
 
     const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
-
-    valueTotal = valueIceCream * quantityIceCream;
 
     // nome
 
@@ -18,24 +25,23 @@ function verifyGlacier() {
         name = "Visitante";
     }
     else if (!nameRegex.test(name)) {
-        showResult("Erro: nome inválido", "red");
-        return
+        error.nome = "✕ erro: Nome inválido";
     }
 
-    // quantidade de sorvetes
+    // validação de erros da quantidade de sorvetes
 
-    if (quantityIceCream > 1) {
-        showResult(`Olá, ${name}, você comprou ${quantityIceCream} sorvetes, o valor debitado é ${"R$ " + valueTotal.toFixed(2)}`, "green");
+    if (quantityIceCream <= 0 || isNaN(quantityIceCream)) {
+        error.quantidade = "✕ erro: Quantidade inválida";
     }
-    else if (quantityIceCream === 1) {
-        showResult(`Olá, ${name}, você comprou ${quantityIceCream} sorvete, o valor debitado é ${"R$ " + valueTotal.
-        toFixed(2)}`, "green");
+
+    // detectação de erro de ambos os inputs
+
+    if (Object.keys(error).length > 0) {
+        showResult(Object.values(error).join("<br>"), "red");
     }
-    else if (quantityIceCream <= 0 || isNaN(quantityIceCream)) {
-        showResult("Digite uma quantidade válida", "red")
-    }
-    else {
-        showResult("Digite uma quantidade válida", "red")
+    else if (quantityIceCream > 0) {
+        valueTotal = valueIceCream * quantityIceCream;
+        showResult(`✓ Olá, ${name}, você comprou ${quantityIceCream} ${caseSensitive}, o valor debitado é ${"R$ " + valueTotal.toFixed(2)}`, "green");
     }
 
     // limpeza dos inputs
@@ -44,21 +50,12 @@ function verifyGlacier() {
     document.getElementById("input-quantity-ice-cream-glacier").value = "";
 }
 
-function showResult(message, color = "green") {
-    // execução do programa
+function showResult(message, color) {
+
+    // criação de cores e mensagens automáticas
 
     const resultElement = document.getElementById("result");
     resultElement.innerHTML = message;
     resultElement.style.color = color;
-    resultElement.style.opacity = 1
-
-    // cancela tempos anteriores
-
-    if(timeClearing) clearTimeout(timeClearing);
-
-    // limpeza da mensagem
-
-    timeClearing = setTimeout(() => {
-        resultElement.style.opacity = 0;
-    }, 3500);
+    resultElement.classList.add("show");
 }

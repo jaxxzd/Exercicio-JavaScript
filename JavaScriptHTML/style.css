@@ -103,11 +103,20 @@ body {
 #result {
     width: 100%;
     max-width: 20rem;
+    overflow: hidden;
     font-weight: 500;
     font-size: .875rem;
     color: green;
     font-family: "Poppins", sans-serif;
     text-align: center;
+    transition: .5s ease;
+}
+
+.result {
+    opacity: 0;
+    transition: .3 ease, transform .3s ease;
+}
+
+.result.show {
     opacity: 1;
-    transition: opacity .5s ease;
 }
