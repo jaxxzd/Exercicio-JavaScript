@@ -19,21 +19,18 @@ function verifyGlacier() {
     if (name === "") {
         name = "Visitante";
     }
-    else if (!nameRegex.test(name)) {
+    if (!nameRegex.test(name)) {
         error.nome = "✕ erro: Nome inválido";
-    }
+    } 
 
     // validação de erros da quantidade de sorvetes
 
-    if (!error.nome) {
-        if (quantityIceCream === "") {
-            error.quantidade = "✕ erro: Campo de quantidade obrigatório";
-        } else {
-            quantityIceCream = Number(quantityIceCream);
-
-            if (quantityIceCream <= 0 || isNaN(quantityIceCream)) {
-                error.quantidade = "✕ erro: Quantidade inválida";
-            }
+    if (quantityIceCream === "") {
+        error.quantidade = "✕ erro: Campo de quantidade obrigatório";
+    } else {
+        quantityIceCream = Number(quantityIceCream);
+        if (quantityIceCream <= 0 || isNaN(quantityIceCream)) {
+            error.quantidade ="✕ erro: Quantidade inválida";
         }
     }
 
