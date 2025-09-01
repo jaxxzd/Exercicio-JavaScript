@@ -11,12 +11,7 @@ function verifyGlacier() {
         return
     };
 
-    quantityIceCream = Number(quantityIceCream);
-
-    const caseSensitive = quantityIceCream === 1 ? "sorvete" : "sorvetes";
-
     const valueIceCream = 8;
-
     const nameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 
     // nome
@@ -30,19 +25,29 @@ function verifyGlacier() {
 
     // validação de erros da quantidade de sorvetes
 
-    if (quantityIceCream <= 0 || isNaN(quantityIceCream)) {
-        error.quantidade = "✕ erro: Quantidade inválida";
+    if (!error.nome) {
+        if (quantityIceCream === "") {
+            error.quantidade = "✕ erro: Campo de quantidade obrigatório";
+        } else {
+            quantityIceCream = Number(quantityIceCream);
+
+            if (quantityIceCream <= 0 || isNaN(quantityIceCream)) {
+                error.quantidade = "✕ erro: Quantidade inválida";
+            }
+        }
     }
 
     // detectação de erro de ambos os inputs
 
     if (Object.keys(error).length > 0) {
         showResult(Object.values(error).join("<br>"), "red");
+        return
     }
-    else if (quantityIceCream > 0) {
-        valueTotal = valueIceCream * quantityIceCream;
-        showResult(`✓ Olá, ${name}, você comprou ${quantityIceCream} ${caseSensitive}, o valor debitado é ${"R$ " + valueTotal.toFixed(2)}`, "green");
-    }
+
+    const caseSensitive = quantityIceCream === 1 ? "sorvete" : "sorvetes";
+    valueTotal = valueIceCream * quantityIceCream;
+
+    showResult(`✓ Olá, ${name}, você comprou ${quantityIceCream} ${caseSensitive}, o valor debitado é ${"R$ " + valueTotal.toFixed(2)}`, "green");
 
     // limpeza dos inputs
 
